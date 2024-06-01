@@ -1,0 +1,62 @@
+body {
+  margin: 0px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: darksalmon;
+}
+
+.header_image {
+  padding: 20px;
+}
+
+.header_heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul > li {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  font-weight: bold;
+  list-style-type: none;
+  padding: 20px;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+li:hover {
+  background-color: slategrey;
+  color: antiquewhite;
+}
+
+.img_mainContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  overflow-x: scroll;
+}
+
+.restarentimage-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+  
+}
+
+.restarent_img{
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 5px;
+  width: 280px;
+  height: 400px;
+}
