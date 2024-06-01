@@ -55,8 +55,8 @@ const BannerImgComponent = () => {
 
 const ImageComponent = (props) => {
   const {
-    title,
-    imageId,
+    avgRating,
+    slaString,
     text,
     name,
     sla,
@@ -68,12 +68,13 @@ const ImageComponent = (props) => {
   return (
     <div className="restarent_img">
       <img
-        width="230px"
-        height="200px"
+        width="330px"
+        height="250px"
         alt="img"
         src={`${RESTAURANT_LIST_IMAGE_URL}${cloudinaryImageId}`}
       />
       <h3>{name}</h3>
+      <p>{avgRating}</p>
       <p>{sla.slaString}</p>
       <p>{cuisines.join(",")}</p>
       <p>{`${locality},${areaName}`}</p>

@@ -2,7 +2,7 @@
   "name": "react-practice-upskill",
   "version": "1.0.0",
   "description": "learning react",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "jest"
   },
