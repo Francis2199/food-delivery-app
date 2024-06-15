@@ -5,8 +5,8 @@ export const BannerImage = (props) => {
   return (
     <div className="img">
       <img
-        width="200"
-        height="200"
+        width="200px"
+        height="200px"
         alt="img"
         src={`${BANNER_LIST_URL}${imageId}`}
       />

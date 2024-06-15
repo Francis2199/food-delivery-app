@@ -15,13 +15,14 @@ const RestaurantDetails = (props) => {
     cloudinaryImageId,
   } = props.restData.info;
   return (
-    <div className="restarent_img">
-      <img
-        width="330px"
-        height="250px"
-        alt="img"
-        src={`${RESTAURANT_LIST_IMAGE_URL}${cloudinaryImageId}`}
-      />
+    <div className="restarentimg_main_container">
+      <div className="restarentimg_child_container">
+        <img
+          className="restarent_img"
+          alt="img"
+          src={`${RESTAURANT_LIST_IMAGE_URL}${cloudinaryImageId}`}
+        />
+      </div>
       <Link to={`/details/${id}`}>
         <h3>{name}</h3>
       </Link>

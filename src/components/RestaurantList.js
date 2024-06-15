@@ -59,7 +59,7 @@ const RestaurantList = () => {
               setFilteredRestaurantList(filteredOutput);
             }}
           >
-            Search
+            GO
           </button>
         </div>
 
