@@ -26,9 +26,9 @@ const RestaurantList = () => {
 
   return filteredRestaurantList.length ? (
     <div className="main-cont">
-      <div className="filter-cont">
+      <div className="filter-cont filter-cont flex mx-10 my-3 justify-between">
         <button
-          className="restaurent_show_btn"
+          className="restaurent_show_btn bg-indigo-900 text-white px-1 py-1 font-normal rounded-md w-[200] h-[35]"
           onClick={() => {
             const filteredOutput = restaurantList.filter((rest) => {
               return rest.info.avgRating > 4.5;
@@ -40,6 +40,7 @@ const RestaurantList = () => {
         </button>
         <div className="search-cont">
           <input
+            className=" border border-gray-500 h-[35] rounded w-4/6 mx-2 py-2 px-3 text-stone-950 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
             id="searchInput"
             placeholder="Search..."
@@ -49,7 +50,7 @@ const RestaurantList = () => {
             }}
           />
           <button
-            className="search_btn"
+            className="search_btn bg-indigo-900 text-white px-1 py-1 font-normal rounded-md  w-[55] h-[35]"
             onClick={() => {
               const filteredOutput = restaurantList.filter((rest) => {
                 return rest.info.name
@@ -64,7 +65,7 @@ const RestaurantList = () => {
         </div>
 
         <button
-          className="reset_btn"
+          className="reset_btn bg-indigo-900 text-white px-1 py-1 font-normal rounded-md  w-[60] h-[35]"
           onClick={() => {
             setFilteredRestaurantList(restaurantList);
             setSearchText("");
@@ -73,7 +74,7 @@ const RestaurantList = () => {
           Reset
         </button>
       </div>
-      <div className="rest-list-cont">
+      <div className="rest-list-cont rest-list-cont flex flex-wrap mx-10">
         {filteredRestaurantList.map((rest) => {
           return <RestaurantDetails key={rest?.info?.id} restData={rest} />;
         })}

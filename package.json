@@ -1,3 +1,4 @@
+
 {
   "name": "react-practice-upskill",
   "version": "1.0.0",
@@ -16,6 +17,8 @@
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
-    "process": "^0.11.10"
+    "postcss": "^8.4.38",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.4"
   }
 }
