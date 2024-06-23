@@ -21,25 +21,25 @@ const Header = () => {
       </Link>
       <div className="menu-container flex items-center">
         <Link to="/">
-          <a className="px-3 font-semibold">🏠 Home</a>
+          <a className="px-3 font-semibold  hover:text-amber-50">🏠 Home</a>
         </Link>
         <Link to="/offers">
-          <a className="px-3 font-semibold">🆕 Offers</a>
+          <a className="px-3 font-semibold  hover:text-amber-50">🆕 Offers</a>
         </Link>
         <Link to="/help">
-          <a className="px-3 font-semibold">🆘 Help</a>
+          <a className="px-3 font-semibold  hover:text-amber-50">🆘 Help</a>
         </Link>
         <Link to="/signin">
-          <a className="px-3 font-semibold">👤 Signln</a>
+          <a className="px-3 font-semibold  hover:text-amber-50">👤 Signln</a>
         </Link>
         <Link to="/cart">
-          <a className="px-3 font-semibold">🛒 Cart</a>
+          <a className="px-3 font-semibold  hover:text-amber-50">🛒 Cart</a>
         </Link>
-        <span className="px-3 font-semibold">
+        <span className="px-3 font-semibold  hover:text-green-600">
           {onlineStatus ? "🟢 Online" : "🔴 Offline"}
         </span>
         <button
-          className="child_btn  px-3 font-semibold"
+          className="child_btn  px-3 font-semibold  hover:text-amber-50"
           onClick={() => {
             setLoginButton(loginButton === "login" ? "logout" : "login");
           }}
@@ -47,7 +47,7 @@ const Header = () => {
           {loginButton}
         </button>
         <button
-          className="add-to-cart-btn px-3 font-semibold"
+          className="add-to-cart-btn px-3 font-semibold  hover:text-amber-50"
           onClick={() => {
             setCartButtonName(
               cartButtonName === "Add to cart" ? "Payment" : "Add to cart"

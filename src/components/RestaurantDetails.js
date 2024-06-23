@@ -1,4 +1,5 @@
 import { RESTAURANT_LIST_IMAGE_URL } from "../../utils/constants";
+
 import { Link } from "react-router-dom";
 
 const RestaurantDetails = (props) => {
@@ -25,7 +26,7 @@ const RestaurantDetails = (props) => {
         />
       </div>
       <Link to={`/details/${id}`}>
-        <h3 className="font-semibold mt-4">{name}</h3>
+        <h3 className="font-semibold mt-4 hover:text-orange-500">{name}</h3>
       </Link>
       <p className="font-semibold">
         <svg
