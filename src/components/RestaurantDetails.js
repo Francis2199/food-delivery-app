@@ -1,6 +1,8 @@
+import { useDispatch } from "react-redux";
 import { RESTAURANT_LIST_IMAGE_URL } from "../../utils/constants";
 
 import { Link } from "react-router-dom";
+import { addItem } from "../Store/CartSlice";
 
 const RestaurantDetails = (props) => {
   const {
@@ -15,6 +17,16 @@ const RestaurantDetails = (props) => {
     areaName,
     cloudinaryImageId,
   } = props.restData.info;
+
+  const dispatch = useDispatch();
+
+  const addItemsToCart = () => {
+    console.log("called");
+    // Action to be dispatched
+    // props?.cardItems
+
+    dispatch(addItem(props.cardItems));
+  };
   return (
     <div className="restarentimg_main_container w-[280] mr-8 mb-8 rounded-2xl">
       <div className="restarentimg_child_container w-full h-[150] m-auto overflow-hidden rounded-2xl">
@@ -24,6 +36,12 @@ const RestaurantDetails = (props) => {
           src={`${RESTAURANT_LIST_IMAGE_URL}${cloudinaryImageId}`}
           width="100%"
         />
+        <button
+          className="px-2 py-1 bg-black left-1/4 bottom-0 text-white rounded-lg absolute"
+          onClick={addItemsToCart}
+        >
+          Add+
+        </button>
       </div>
       <Link to={`/details/${id}`}>
         <h3 className="font-semibold mt-4 hover:text-orange-500">{name}</h3>

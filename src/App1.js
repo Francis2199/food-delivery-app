@@ -14,13 +14,18 @@ import Cart from "./components/Cart";
 import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home.js";
 import RestaurantOverview from "./components/RestaurantOverview";
+import { Provider } from "react-redux";
+import appStore from "./Store/app.store.js";
 
 const AppLayout = () => {
   return (
     <div className="main-container">
-      <Header />
-      <Outlet />
-      <Footer />
+      <Provider store={appStore}>
+        {" "}
+        <Header />
+        <Outlet />
+        <Footer />
+      </Provider>
     </div>
   );
 };

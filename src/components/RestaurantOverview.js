@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useRestaurantMenuList from "../custum_hooks/useRestaurantMenuList";
 import RestaurantCategory from "./RestaurantCategory";
@@ -8,6 +9,7 @@ const RestaurantOverview = () => {
   // const restaurantMenuList = menuDetails.menuList;
   const restaurantName = menuDetails.restaurantName;
   const cardDetails = menuDetails.cardDetails;
+  let { expandCategeryIndex, setExpandCategeryIndex } = useState(0);
 
   const categories = cardDetails.filter((category) => {
     return (
@@ -21,11 +23,20 @@ const RestaurantOverview = () => {
   return cardDetails.length ? (
     <div className="main-cont w-10/12 m-auto">
       <h1 className="font-extrabold text-2xl my-5">{restaurantName}</h1>
-      {categories.map((category) => {
+      {categories.map((category, index) => {
         return (
           <RestaurantCategory
             key={category.card.card.title}
             category={category}
+            expandHideCategoryParameter={
+              expandCategeryIndex === index ? true : false
+            }
+            expandFunction={() =>
+              setExpandCategeryIndex(
+                0
+                // expandCategeryIndex === index ? null : index
+              )
+            }
           />
         );
       })}

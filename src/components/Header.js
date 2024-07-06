@@ -2,12 +2,16 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import useOnlineStatus from "../custum_hooks/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [loginButton, setLoginButton] = useState(["login"]);
   const [cartButtonName, setCartButtonName] = useState(["Add to cart"]);
   useEffect(() => {}, [loginButton]);
   const onlineStatus = useOnlineStatus();
+  const cartSelector = useSelector((store) => {
+    return store.cart.items;
+  });
   return (
     <header className="header flex justify-between bg-amber-600 px-2 py-2">
       <Link to="/">
@@ -16,7 +20,7 @@ const Header = () => {
           width="75px"
           height="75px"
           alt="react_icon"
-          src={require("../../assets/image/swiggy_icon.jpg")}
+          src={require("../../assets/image/chef-food.jpg")}
         />
       </Link>
       <div className="menu-container flex items-center">
@@ -35,6 +39,12 @@ const Header = () => {
         <Link to="/cart">
           <a className="px-3 font-semibold  hover:text-amber-50">🛒 Cart</a>
         </Link>
+        <li>
+          Cart
+          <div className="mx-2 inline-block w-6 h-6 rounded-full bg-gray-500 text-center">
+            {cartSelector.length}
+          </div>
+        </li>
         <span className="px-3 font-semibold  hover:text-green-600">
           {onlineStatus ? "🟢 Online" : "🔴 Offline"}
         </span>
